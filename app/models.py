@@ -34,10 +34,5 @@ class User(db.Model):
         return check_password_hash(self.password_hash, password)        
 from flask_login import UserMixin
 
-class User(UserMixin, db.Model):
 
-from app import login
 
-@login.user_loader
-def load_user(id):
-    return User.query.get(int(id))
